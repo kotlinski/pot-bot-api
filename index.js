@@ -3,17 +3,11 @@ const path = require('path');
 const pot_bot = require('pot-bot');
 const PORT = process.env.PORT || 5000;
 
-function runPotBot() {
-  const myPromise = (new Promise(pot_bot.fetchCurrentDraw('asdf', 'stryktipset')))
-      .then(draw => draw)
-      .catch(err => err);
-
-  console.log(`myPromise: ${JSON.stringify(myPromise, null, 2)}`);
-  return myPromise;
-
+async function runPotBot(api_key, game_type) {
+  return await pot_bot.fetchCurrentDraw(api_key, game_type);
 }
 
 express()
     .use(express.static(path.join(__dirname, 'public')))
-    .get('/', (req, res) => res.json(runPotBot()))
+    .get('/', (req, res) => res.json(runPotBot(req.query.api_key, 'stryktipset')))
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
