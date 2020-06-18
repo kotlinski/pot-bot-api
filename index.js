@@ -17,6 +17,9 @@ express()
       res.write('starting script...\n\n');
       const bets_file_ref = await runPotBot(req.query.api_key, req.query.no_of_lines, 'stryktipset');
       console.log(`bets_file_ref: ${JSON.stringify(bets_file_ref, null, 2)}`);
-      res.sendFile(bets_file_ref);
+      var text="hello world";
+      res.setHeader('Content-type', "application/octet-stream");
+      res.setHeader('Content-disposition', 'attachment; filename=file.txt');
+      res.send(text);
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);
