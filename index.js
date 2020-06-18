@@ -14,6 +14,7 @@ runPotBot = async function (api_key, no_of_lines, game_type) {
 express()
     .use(express.static(path.join(__dirname, 'public')))
     .get('/', async (req, res) => {
+      res.write('starting script...\n\n');
       const bets_file_ref = await runPotBot(req.query.api_key, req.query.no_of_lines, 'stryktipset');
       console.log(`bets_file_ref: ${JSON.stringify(bets_file_ref, null, 2)}`);
       console.log(`__dirname + : ${JSON.stringify(__dirname, null, 2)}`);
