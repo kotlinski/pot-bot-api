@@ -1,0 +1,22 @@
+{
+  "name": "pot-bot-api",
+  "version": "1.0.0",
+  "description": "web api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotlinski/pot-bot-api.git"
+  },
+  "keywords": [
+    "stryktipset"
+  ],
+  "author": "Simon Kotlinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kotlinski/pot-bot-api/issues"
+  },
+  "homepage": "https://github.com/kotlinski/pot-bot-api#readme"
+}
