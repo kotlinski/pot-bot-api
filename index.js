@@ -16,7 +16,7 @@ express()
     .get('/', async (req, res) => {
       const bets_file_ref = await runPotBot(req.query.api_key, req.query.no_of_lines, 'stryktipset');
       console.log(`bets_file_ref: ${JSON.stringify(bets_file_ref, null, 2)}`);
-      console.log(`__dirname + : ${JSON.stringify(__dirname +, null, 2)}`);
+      console.log(`__dirname + : ${JSON.stringify(__dirname, null, 2)}`);
       res.sendFile(__dirname + '/' + bets_file_ref);
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);
