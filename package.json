@@ -26,6 +26,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "path": "^0.12.7",
-    "pot-bot": "^2.0.0"
+    "pot-bot": "^2.0.1"
   }
 }
