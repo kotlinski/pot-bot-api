@@ -30,7 +30,7 @@
             const draw = await pot_bot.fetchCurrentDraw(api_key, game_type);
             console.log(`draw: ${JSON.stringify(draw, null, 2)}`);
             const bets_to_print = await pot_bot.analyzeCurrentDraw(game_type, no_of_lines);
-            download(game_type, bets_to_print.printable);
+            download(`${game_type}.txt`, bets_to_print.printable);
         };
 
 
@@ -59,10 +59,10 @@
         %>
 
         <br><br>
-        <input type="text" class="input" maxlength="512" id="api_key"/>
+        <input type="text" class="input" maxlength="512" id="api_key" style="color:black;"/>
         <br><br>
-        <a type="button" class="btn btn-lg btn-primary" style="color:black;"
-           onclick="alert(document.getElementById('api_key').value/*, 150, 'stryktipset'*/)">Click me</a>
+        <a type="button" class="btn btn-lg btn-primary"
+           onclick="runPotBot(document.getElementById('api_key').value, 150, 'stryktipset')">Download lines</a>
 
     </div>
 </div>
