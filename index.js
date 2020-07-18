@@ -23,12 +23,13 @@ express()
     .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);
 */
 
-const options = {async: true, pot_bot: pot_bot};
+const options = {async: true};
+const data = {pot_bot: pot_bot};
 
 express()
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
-    .get('/', (req, res) => res.render('pages/index', options))
+    .get('/', (req, res) => res.render('pages/index', data, options))
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
