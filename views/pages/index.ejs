@@ -18,6 +18,50 @@
     <a type="button" class="btn btn-lg btn-default" href="https://devcenter.heroku.com/articles/getting-started-with-nodejs"><span class="glyphicon glyphicon-flash"></span> Getting Started on Heroku with Node.js</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/heroku/node-js-getting-started"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
   </div>
+
+  <div class="container">
+    <!-- <h2>Pot Bot Results</h2>-->
+    <%
+    /*
+        runPotBot = async function (api_key, no_of_lines, game_type) {
+            const draw = await pot_bot.fetchCurrentDraw(api_key, game_type);
+            console.log(`draw: ${JSON.stringify(draw, null, 2)}`);
+            const bets_to_print = await pot_bot.analyzeCurrentDraw(game_type, no_of_lines);
+            download(game_type, bets_to_print.printable);
+        };
+    */
+
+
+    /*
+        express()
+                .use(express.static(path.join(__dirname, 'public')))
+                .get('/', async (req, res) => {
+                    res.setHeader('Content-type', "application/octet-stream");
+                    res.setHeader('Content-disposition', 'attachment; filename=file.txt');
+                    const bets_to_print = await runPotBot(req.query.api_key, req.query.no_of_lines, 'stryktipset');
+                    res.send(bets_to_print.printable);
+                })
+                .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);*/
+    /*    function download(filename, text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+
+        // Start file download.
+        //download("hello.txt","This is the content of my file :)");*/
+    %>
+
+
+    <input type="text" maxlength="512" id="api_key"/>
+
+    <button onclick="alert(document.getElementById('api_key').value/*, 150, 'stryktipset'*/)">Click me</button>
+
+  </div>
 </div>
 <div class="container">
   <div class="alert alert-info text-center" role="alert">
