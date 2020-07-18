@@ -22,7 +22,8 @@ express()
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);
 */
-const options = {async: true}
+
+const options = {async: true, pot_bot: pot_bot};
 
 express()
     .use(express.static(path.join(__dirname, 'public')))

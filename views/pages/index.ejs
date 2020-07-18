@@ -3,10 +3,7 @@
 <head>
     <% include ../partials/header.ejs %>
 </head>
-
 <script>
-  const pot_bot = require('pot-bot');
-
   runPotBot = async function (api_key, no_of_lines, game_type) {
     const draw = await pot_bot.fetchCurrentDraw(api_key, game_type);
     console.log(`draw: ${JSON.stringify(draw, null, 2)}`);
@@ -39,8 +36,6 @@
           // Start file download.
           //download("hello.txt","This is the content of my file :)");*/
 </script>
-
-
 <body>
 
 <% include ../partials/nav.ejs %>
@@ -67,7 +62,7 @@
         <input type="text" class="input" maxlength="4" id="no_of_lines" style="color:black;"/>
         <br><br>
         <a type="button" class="btn btn-lg btn-primary"
-           onclick="runPotBot(
+           onclick="handleClick(
                document.getElementById('api_key').value,
            document.getElementById('no_of_lines').value,
             'stryktipset'
