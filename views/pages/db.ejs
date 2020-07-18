@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 </head>
 
 <body>
@@ -9,13 +9,54 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-<h2>Database Results</h2>
+   <!-- <h2>Pot Bot Results</h2>-->
+    <%
+/*
+    runPotBot = async function (api_key, no_of_lines, game_type) {
+        const draw = await pot_bot.fetchCurrentDraw(api_key, game_type);
+        console.log(`draw: ${JSON.stringify(draw, null, 2)}`);
+        const bets_to_print = await pot_bot.analyzeCurrentDraw(game_type, no_of_lines);
+        download(game_type, bets_to_print.printable);
+    };
+*/
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
-</ul>
+
+    /*
+        express()
+                .use(express.static(path.join(__dirname, 'public')))
+                .get('/', async (req, res) => {
+                    res.setHeader('Content-type', "application/octet-stream");
+                    res.setHeader('Content-disposition', 'attachment; filename=file.txt');
+                    const bets_to_print = await runPotBot(req.query.api_key, req.query.no_of_lines, 'stryktipset');
+                    res.send(bets_to_print.printable);
+                })
+                .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);*/
+/*    function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    // Start file download.
+    //download("hello.txt","This is the content of my file :)");*/
+    %>
+
+
+    <input type="text" maxlength="512" id="api_key"/>
+
+    <button onclick="alert(document.getElementById('api_key').value/*, 150, 'stryktipset'*/)">Click me</button>
+
+    <h2>Database Results</h2>
+
+    <ul>
+        <% results.forEach(function(r) { %>
+            <li><%= r.id %> - <%= r.name %></li>
+        <% }); %>
+    </ul>
 
 </div>
 
