@@ -9,14 +9,16 @@
 <% include ../partials/nav.ejs %>
 
 <div class="container">
-    <h2>Pot Bot Results</h2>
+   <!-- <h2>Pot Bot Results</h2>-->
     <%
+/*
     runPotBot = async function (api_key, no_of_lines, game_type) {
         const draw = await pot_bot.fetchCurrentDraw(api_key, game_type);
         console.log(`draw: ${JSON.stringify(draw, null, 2)}`);
         const bets_to_print = await pot_bot.analyzeCurrentDraw(game_type, no_of_lines);
         download(game_type, bets_to_print.printable);
     };
+*/
 
 
     /*
@@ -29,7 +31,7 @@
                     res.send(bets_to_print.printable);
                 })
                 .listen(PORT, () => console.log(`Listening on ${PORT}`)).setTimeout(500000);*/
-    function download(filename, text) {
+/*    function download(filename, text) {
         var element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
         element.setAttribute('download', filename);
@@ -40,13 +42,13 @@
     }
 
     // Start file download.
-    download("hello.txt","This is the content of my file :)");
+    //download("hello.txt","This is the content of my file :)");*/
     %>
 
 
     <input type="text" maxlength="512" id="api_key"/>
 
-    <button onclick="runPotBot(document.getElementById('api_key').value, 150, 'stryktipset')">Click me</button>
+    <button onclick="alert(document.getElementById('api_key').value/*, 150, 'stryktipset'*/)">Click me</button>
 
     <h2>Database Results</h2>
 
