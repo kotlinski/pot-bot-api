@@ -5,6 +5,7 @@
 </head>
 
 <script>
+  const pot_bot = require('pot-bot');
 
   runPotBot = async function (api_key, no_of_lines, game_type) {
     const draw = await pot_bot.fetchCurrentDraw(api_key, game_type);
@@ -62,10 +63,15 @@
     <div class="container">
         <h2>Pot Bot Results</h2>
         <br><br>
-        <input type="text" class="input" maxlength="512" id="api_key" style="color:black;"/>
+        <input type="text" class="input" maxlength="50" id="api_key" style="color:black;"/>
+        <input type="text" class="input" maxlength="4" id="no_of_lines" style="color:black;"/>
         <br><br>
         <a type="button" class="btn btn-lg btn-primary"
-           onclick="runPotBot(document.getElementById('api_key').value, 150, 'stryktipset')">Download lines</a>
+           onclick="runPotBot(
+               document.getElementById('api_key').value,
+           document.getElementById('no_of_lines').value,
+            'stryktipset'
+            )">Download lines</a>
 
     </div>
 </div>
